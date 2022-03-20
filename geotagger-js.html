@@ -1,0 +1,71 @@
+<HTML>
+
+<HEAD>
+	<meta charset="utf-8" />
+        <title>geotagger-js</title>
+	<script type="text/javascript" src="assets/exif.js"></script>
+	<script type="text/javascript" src="assets/geotagger.js"></script>
+	<link rel="stylesheet" href="assets/geotagger-js.css" />
+</HEAD>
+
+<BODY>
+
+<div class="geotagger-js">
+
+	<div id="geotagger-js-waypoints">
+		<div class="geotagger-js-dragdrop" id="geotagger-js-dragdrop-waypoints">
+			<span class="desc">
+				<span class="step" data-number="1"></span>
+				Visit <a href="https://takeout.google.com/settings/takeout/custom/location_history" target="_blank">Google Takeout</a> to download your location-history at Google. Afterwards you may drag&amp;drop the .json-files you received here, or ...
+			</span>
+			<label class="file">
+				<input type="file" multiple="multiple" onchange="handleJSON(this.files)" />
+				select your files here
+			</label>
+		</div>
+		<script type="text/javascript"> addDropArea('geotagger-js-dragdrop-waypoints', handleJSON); </script>
+		<div id="geotagger-js-statistics">
+			<canvas id="geotagger-js-statistics-canvas" width="1232" height="200"></canvas>
+			<div>
+				<span>
+					<span class="title">from:</span>
+					<span class="value" id="geotagger-js-statistics-from"></span>
+				</span>
+				<span>
+					<span class="title">to:</span>
+					<span class="value" id="geotagger-js-statistics-to"></span>
+				</span>
+				<span>
+					<span class="title">days with data:</span>
+					<span class="value" id="geotagger-js-statistics-days"></span>
+				</span>
+				<span>
+					<span class="title">waypoints:</span>
+					<span class="value" id="geotagger-js-statistics-waypoints"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="geotagger-js-images" class="disabled">
+		<div class="geotagger-js-dragdrop" id="geotagger-js-dragdrop-images">
+			<span class="desc">
+				<span class="step" data-number="2"></span>
+				Drag&amp;drop the images you want to geotag here, or ...
+			</span>
+			<label class="file">
+				<input type="file" multiple="multiple" onchange="handleImages(this.files)" />
+				select your images here
+			</label>
+		</div>
+		<script type="text/javascript">	addDropArea('geotagger-js-dragdrop-images', handleImages); </script>
+	</div>
+
+	<div id="geotagger-js-imagelist">
+	</div>
+
+</div>
+
+</BODY>
+
+</HTML>

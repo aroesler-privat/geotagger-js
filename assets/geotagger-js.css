@@ -1,0 +1,310 @@
+@charset "UTF-8";
+
+/* ---[ Definitions ]----------------------------------------------------- */
+
+:root {
+	--transition-time: 0.4s;
+	--col: #424242;
+	--light: #BABABA;
+	--highlight: #03a9f4;
+	--box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.geotagger-js {
+	font-family: Open Sans;
+	font-weight: 400;
+	font-size: max(2.2vw, 16px);
+	line-height: 1.6em;
+	color: var(--col);
+	width: 100%;
+	margin: auto;
+}
+
+@media screen and (min-width: 576px) {
+
+	.geotagger-js {
+		max-width: 540px;
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+
+	.geotagger-js {
+		max-width: 600px;
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 1200px) {
+
+	.geotagger-js {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+}
+
+/* ---[ the drag&drop-areas ]--------------------------------------------- */
+
+#geotagger-js-waypoints, #geotagger-js-images {
+	position: relative;
+	width: 100%;
+	margin-top: 4em;
+}
+
+#geotagger-js-images.disabled {
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+.geotagger-js-dragdrop {
+	border: 2px dashed var(--light);
+	padding: 1em 0;
+	margin: 1em 0;
+}
+
+.geotagger-js-dragdrop.highlight {
+	border: 2px dashed var(--highlight);
+	box-shadow: var(--box-shadow);
+}
+
+.geotagger-js-dragdrop > .desc {
+	display: block;
+	position: relative;
+	padding: 1em 2em;
+	text-align: left;
+}
+
+.geotagger-js-dragdrop > .file {
+	display: inline-block;
+	position: relative;
+	white-space: nowrap;
+	border: 1px solid var(--light);
+	padding: 0.5em 1em;
+	cursor: pointer;
+	left: 50%;
+	-ms-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+
+.geotagger-js-dragdrop > .file input[type="file"] {
+	display: none;
+}
+
+.geotagger-js-dragdrop > .desc .step {
+	display: block;
+	position: relative;
+	margin-top: -3.5em;
+	margin-bottom: 1em;
+	width: 100%;
+	height: 3em;
+	font-size: 1em;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.geotagger-js-dragdrop > .desc .step::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3em;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	height: 100%;
+	border-radius: 50%;
+	background-color: var(--highlight);
+}
+
+.geotagger-js-dragdrop > .desc .step::after {
+	content: attr(data-number);
+	font-weight: 700;
+	font-size: 1.8em;
+	color: #FFFFFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/* ---[ the waypoint statistics ]----------------------------------------- */
+
+#geotagger-js-statistics {
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #FFFFFF;
+}
+
+#geotagger-js-statistics-canvas {
+	width: 100%;
+	height: 100%;
+}
+
+#geotagger-js-statistics > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255,255,255,0.5);
+}
+
+#geotagger-js-statistics .title {
+	display: block;
+	padding: 0.2em 1em 0.2em 1em;
+	font-size: 0.75em;
+	font-weight: 700;
+	line-height: 1em;
+	color: var(--col);
+}
+
+#geotagger-js-statistics .value {
+	display: block;
+	padding: 0 0.75em 0.2em 0.75em;
+	font-size: 1em;
+	font-weight: 200;
+	line-height: 1em;
+	color: #000000:
+}
+
+/* ---[ the list with results ]------------------------------------------- */
+
+#geotagger-js-imagelist .result {
+	width: 100%;
+	border-radius: 0.25em;
+	overflow: hidden;
+	color: var(--col);
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#geotagger-js-imagelist .result:hover {
+	box-shadow: var(--box-shadow);
+}
+
+#geotagger-js-imagelist .result .pushpin {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTTEyIDJDOC4xMyAyIDUgNS4xMyA1IDlDNSAxMy4xNyA5LjQyIDE4LjkyIDExLjI0IDIxLjExQzExLjY0IDIxLjU5IDEyLjM3IDIxLjU5IDEyLjc3IDIxLjExQzE0LjU4IDE4LjkyIDE5IDEzLjE3IDE5IDlDMTkgNS4xMyAxNS44NyAyIDEyIDJaTTEyIDExLjVDMTAuNjIgMTEuNSA5LjUgMTAuMzggOS41IDlDOS41IDcuNjIgMTAuNjIgNi41IDEyIDYuNUMxMy4zOCA2LjUgMTQuNSA3LjYyIDE0LjUgOUMxNC41IDEwLjM4IDEzLjM4IDExLjUgMTIgMTEuNVonIGZpbGw9JyM0MjQyNDInLz48L3N2Zz4K);
+	background-repeat: no-repeat;
+	background-size: 1em 1em;
+	background-position: center;
+}
+
+#geotagger-js-imagelist .result .pushpin a {
+	text-decoration: none;
+	font-weight: 400;
+	line-height: 1em;
+	text-align: center;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	position: relative;
+	z-index: 10;
+}
+
+#geotagger-js-imagelist .result .pushpin.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+#geotagger-js-imagelist .result .pushpin.disabled a::after {
+	content: "/";
+	color: #FF0000;
+}
+
+#geotagger-js-imagelist .image-wrapper {
+	position: relative;
+	margin: 1em;
+	width: calc(100% - 2em);
+}
+
+#geotagger-js-imagelist .image-wrapper img {
+	width: 100%;
+	height: auto;
+	border-radius: 0.25em;
+	overflow: hidden;
+}
+
+#geotagger-js-imagelist .image-wrapper .meta {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1.5em;
+	background-color: rgba(255,255,255,0.7);
+}
+
+#geotagger-js-imagelist .image-wrapper .meta > span {
+	position: absolute;
+	font-size: 0.8em;
+	line-height: 1.875em;
+	font-weight: 500;
+}
+
+#geotagger-js-imagelist .image-wrapper .meta .meta-geotag {
+	left: 0.5em;
+	margin-top: 0.21875em;
+	font-size: 1em;
+}
+
+#geotagger-js-imagelist .image-wrapper .meta .meta-date {
+	right: 0.5em;
+}
+
+#geotagger-js-imagelist .data-wrapper {
+	position: relative;
+	margin: 1em;
+	width: calc(100% - 2em);
+}
+
+#geotagger-js-imagelist .data-wrapper h4 {
+	font-size: 1.5em;
+	line-height: 1em;
+	font-weight: 700;
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 0.5em;
+}
+
+#geotagger-js-imagelist .data-wrapper .data-geotag {
+	font-size: 1em;
+	line-height: 1em;
+	font-weight: 200;
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 0.5em;
+}
+
+#geotagger-js-imagelist .data-wrapper .data-geotag.alternative {
+	color: var(--light);
+}
+
+#geotagger-js-imagelist .data-wrapper .data-geotag.copy a {
+	color: unset;
+	text-decoration: unset;
+	background-color: var(--highlight);
+	color: #FFFFFF;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+}
+
+@media screen and (min-width: 768px) {
+
+	#geotagger-js-imagelist .image-wrapper {
+		width: 10em;
+		float: left;
+	}
+}
+
