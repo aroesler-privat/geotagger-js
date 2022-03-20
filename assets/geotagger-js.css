@@ -20,7 +20,7 @@
 	margin: auto;
 }
 
-.geotagger-js div::before, .geotagger-js span::before, .geotagger-js div::after, .geotagger-js span::after {
+.geotagger-js div::before, .geotagger-js span:not(.step)::before, .geotagger-js div::after, .geotagger-js span:not(.step)::after {
 	display: none;
 }
 
