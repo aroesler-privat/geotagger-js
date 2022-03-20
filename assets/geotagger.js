@@ -418,7 +418,7 @@ function writeTheGeotags(pid, privilege, theData)
 	let lon  = timeline[theData.Day][theData.Index].theLong;
 
 	fix.innerHTML  = "lat: " + String(lat).substring(0,9) + " lon: " + String(lon).substring(0,9) + " (-" + theData.Minutes + "min)";
-	link.innerHTML = "<a href='https://www.openstreetmap.org/?mlat=" + lat + "&mlon=" + lon + "#map=14/" + lat + "/" + lon + "'></a>";
+	link.innerHTML = "<a href='https://www.openstreetmap.org/?mlat=" + lat + "&mlon=" + lon + "#map=14/" + lat + "/" + lon + "' target='_blank'></a>";
 
 	if ( privilege != "preferred" || copy == null )
 	{
