@@ -20,6 +20,10 @@
 	margin: auto;
 }
 
+.geotagger-js div::before, .geotagger-js span::before, .geotagger-js div::after, .geotagger-js span::after {
+	display: none;
+}
+
 @media screen and (min-width: 576px) {
 
 	.geotagger-js {
@@ -257,6 +261,7 @@
 	left: 0.5em;
 	margin-top: 0.21875em;
 	font-size: 1em;
+	line-height: 1.2em;
 }
 
 #geotagger-js-imagelist .image-wrapper .meta .meta-date {
