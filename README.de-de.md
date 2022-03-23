@@ -23,3 +23,5 @@ Besuche [Google Takeout](https://takeout.google.com/settings/takeout/custom/loca
 Die JSON-Dateien von Google kannst Du jetzt per Drag & Drop oder über die Datei-Dialog laden. Im nächsten Schritt kannst Du ein oder mehrere Bilder auswählen.
 
 Können zumindest am Tag der Aufnahme des Fotos GPS-Daten im Google-Datensatz gefunden, so zeigt das Tool die der Aufnahme am nächsten liegenden an. Über zwei Buttons können entweder die Koordinaten ins die Zwischenablage kopiert werden, oder der passende `exiftool`-Befehl mit allen Parametern, um die GPS-Daten im EXIF-Datensatz des Fotos zu hinterlegen.
+
+![Screenshot](screenshot.jpg)
