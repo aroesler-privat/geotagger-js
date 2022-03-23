@@ -5,6 +5,8 @@ Um die EXIF-Daten der Fotos zu lesen, nutze ich [Exif-js](https://github.com/exi
 
 Mehr dazu und Beispiel: [Eintrag in meinem Blog (Deutsch)](https://blog.gestreift.net/knowhow/geotagging-mit-googles-standortverlauf/)
 
+In anderen Sprachen lesen: [English](README.md)
+
 ## Installation als eigenständiges Tool
 Lade das Verzeichnis `assets` und die Datei `geotagger-js.html` herunter und platziere sie genau so in einem Ordner. Wenn Du jetzt mit dem Internetbrowser Deiner Wahl die lokale Datei geotagger-js.html öffnest (z.B. file:///home/name/dir/geotagger-js.html), dann solltest Du direkt dieses Bild sehen:
 
